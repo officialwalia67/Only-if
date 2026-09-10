@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yuki & Kai — Archive</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background: #050505;
+    color: #e9e2d6;
+    font-family: "Courier New", monospace;
+    overflow-x: hidden;
+  }
+
+  .archive {
+    width: min(920px, 100%);
+    min-height: 100vh;
+    margin: auto;
+    padding: 28px 18px 60px;
+    position: relative;
+  }
+
+  .tiny {
+    position: absolute;
+    color: #b8b0a5;
+    opacity: .9;
+    font-size: clamp(12px, 2.7vw, 17px);
+    line-height: 1.1;
+    user-select: none;
+    pointer-events: none;
+  }
+
+  .cat { top: 4%; left: 6%; transform: rotate(-8deg); }
+  .bug { top: 18%; right: 7%; transform: rotate(7deg); }
+  .doll { top: 43%; left: 4%; transform: rotate(-5deg); }
+  .arrow { bottom: 8%; right: 5%; transform: rotate(8deg); }
+  .note { bottom: 2%; left: 12%; font-size: 12px; opacity: .55; }
+
+  .wire {
+    position: absolute;
+    border: 1px dashed #49443e;
+    border-radius: 50%;
+    opacity: .45;
+    pointer-events: none;
+  }
+  .wire.one { width: 150px; height: 90px; top: 10%; left: 12%; }
+  .wire.two { width: 120px; height: 180px; bottom: 15%; right: 10%; }
+
+  .files {
+    position: relative;
+    z-index: 2;
+    width: min(560px, 82%);
+    margin: 13vh auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 54px;
+  }
+
+  .file {
+    display: block;
+    position: relative;
+    text-decoration: none;
+    color: #e9e2d6;
+    padding: 25px 24px;
+    border: 1px solid #6b645b;
+    background: rgba(255,255,255,.018);
+    transform: rotate(var(--tilt));
+    transition: transform .18s ease, border-color .18s ease, background .18s ease;
+    box-shadow: 7px 7px 0 rgba(255,255,255,.025);
+  }
+
+  .file:hover, .file:focus {
+    transform: rotate(0deg) scale(1.025);
+    border-color: #cfc5b7;
+    background: rgba(255,255,255,.045);
+    outline: none;
+  }
+
+  .file::before {
+    content: "";
+    position: absolute;
+    width: 34px;
+    height: 34px;
+    border-left: 1px solid #8a8277;
+    border-top: 1px solid #8a8277;
+    top: -9px;
+    left: -9px;
+  }
+
+  .file::after {
+    content: attr(data-doodle);
+    position: absolute;
+    right: -34px;
+    bottom: -20px;
+    color: #a79f94;
+    font-size: 26px;
+    transform: rotate(9deg);
+    white-space: pre;
+  }
+
+  .label {
+    font-size: 12px;
+    letter-spacing: 2px;
+    opacity: .6;
+    margin-bottom: 9px;
+  }
+
+  .name {
+    font-size: clamp(22px, 5vw, 38px);
+    letter-spacing: 1px;
+  }
+
+  .scribble {
+    margin-top: 8px;
+    font-size: 12px;
+    opacity: .52;
+    transform: rotate(-1deg);
+  }
+
+  .footer {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    margin-top: 58px;
+    font-size: 11px;
+    opacity: .38;
+  }
+
+  @media (max-width: 500px) {
+    .archive { padding-top: 18px; }
+    .files { width: 78%; gap: 46px; }
+    .file { padding: 21px 18px; }
+    .tiny { font-size: 12px; }
+  }
+</style>
+</head>
+<body>
+<main class="archive">
+
+  <!-- Tiny doodle universe living around the files -->
+  <div class="tiny cat">
+    /\_/\\<br>
+   ( o.o ) ♛<br>
+    &gt; ^ &lt;<br>
+    <small>important business</small>
+  </div>
+
+  <div class="tiny bug">
+    .  *<br>
+   \|/<br>
+ -- o --<br>
+   /|\\<br>
+   <small>??</small>
+  </div>
+
+  <div class="tiny doll">
+    [•_•]<br>
+    /|\\<br>
+    / \\<br>
+    <small>fixing nothing</small>
+  </div>
+
+  <div class="wire one"></div>
+  <div class="wire two"></div>
+
+  <section class="files">
+
+    <a class="file"
+       style="--tilt:-2deg"
+       data-doodle="  ←\n  o/ \n /|  "
+       href="https://drive.google.com/file/d/17_JXkbQDtGqV-SReZ6nF4zF_Ym7Q8BGY/view?usp=drivesdk"
+       target="_blank" rel="noopener">
+      <div class="label">FOUND OBJECT 001</div>
+      <div class="name">FILE 001</div>
+      <div class="scribble">someone left this here.</div>
+    </a>
+
+    <a class="file"
+       style="--tilt:1.5deg"
+       data-doodle="  __\n /__\\\n  ||\n zoom"
+       href="https://drive.google.com/file/d/18HXVcSzNaPDLy8eecQHEKRq1CzPw2bGy/view?usp=drivesdk"
+       target="_blank" rel="noopener">
+      <div class="label">FOUND OBJECT 002</div>
+      <div class="name">FILE 002</div>
+      <div class="scribble">probably supposed to be somewhere else.</div>
+    </a>
+
+    <a class="file"
+       style="--tilt:-1deg"
+       data-doodle="  o\n /|\\\n / \\  ...\n waiting"
+       href="https://drive.google.com/file/d/1T4IT3o1oqhWzOcVD9bv5WobSImi_4v_P/view?usp=drivesdk"
+       target="_blank" rel="noopener">
+      <div class="label">FOUND OBJECT 003</div>
+      <div class="name">FILE 003</div>
+      <div class="scribble">okay so here we go.</div>
+    </a>
+
+  </section>
+
+  <div class="tiny arrow">
+    ↘<br>
+    <small>don't ask.</small>
+  </div>
+
+  <div class="tiny note">
+    meanwhile, somewhere completely unnecessary...
+  </div>
+
+  <div class="footer">YUKI × KAI — ARCHIVE</div>
+</main>
+</body>
+</html>
